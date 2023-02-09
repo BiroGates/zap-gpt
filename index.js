@@ -62,7 +62,7 @@ const commands = (client, message) => {
         davinci3: "/bot",
         dalle: "/img"
     }
-
+    
     let firstWord = message.text.substring(0, message.text.indexOf(" "));
 
     switch (firstWord) {
@@ -95,5 +95,7 @@ const commands = (client, message) => {
 }
 
 async function start(client) {
-    client.onAnyMessage((message) => commands(client, message));
+    client.onAnyMessage((message) => {
+      commands(client, message)
+    });
 }
